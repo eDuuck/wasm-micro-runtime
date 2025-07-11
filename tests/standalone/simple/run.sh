@@ -13,7 +13,7 @@ readonly WAMRC_CMD="../../../wamr-compiler/build/wamrc"
 
 if [[ $1 != "--aot" ]]; then
     echo "============> run simple.wasm"
-    ${IWASM_CMD} simple.wasm
+    sudo ${IWASM_CMD} simple.wasm
 else
     echo "============> compile simple.wasm to aot"
     [[ $2 == "--sgx" ]] && ${WAMRC_CMD} -sgx -o simple.aot simple.wasm \

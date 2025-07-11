@@ -45,6 +45,11 @@ if (NOT DEFINED WAMR_BUILD_TARGET)
   endif ()
 endif ()
 
+if (NOT DEFINED WASM_SEV_ATTACK)
+  # For the SEV study
+  set (WASM_SEV_ATTACK 1)
+endif ()
+
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif ()
@@ -81,7 +86,7 @@ endif ()
 
 if (NOT DEFINED WAMR_BUILD_FAST_INTERP)
   # Enable fast interpreter
-  set (WAMR_BUILD_FAST_INTERP 1)
+  set (WAMR_BUILD_FAST_INTERP 0)
 endif ()
 
 if (NOT DEFINED WAMR_BUILD_MULTI_MODULE)
